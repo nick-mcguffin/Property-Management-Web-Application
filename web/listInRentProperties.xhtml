@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>List In Rent Properties</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./pageTemplate.xhtml">
+            <ui:define name="top"></ui:define>
+            <ui:define name="content">
+                <h:form>
+                    <div class="section">
+                        <h2>List In Rent Properties</h2>
+                        <div class="listTable">
+                            <h:dataTable value="#{propertyInRent.getPropertyInRentList()}" var="it" border="1">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Id"/>
+                                    </f:facet>
+                                    <h:outputText value="#{it.propertyID}"/>
+                                </h:column>
+                                 <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Address"/>
+                                    </f:facet>
+                                    <h:outputText value="#{it.address}"/>
+                                </h:column>
+                                 <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Description"/>
+                                    </f:facet>
+                                    <h:outputText value="#{it.description}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Bedrooms"/>
+                                    </f:facet>
+                                    <h:outputText value="#{it.numberOfBedrooms}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Rental Price"/>
+                                    </f:facet>
+                                    <h:outputText value="$#{it.rentalPrice} pw"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Tenant Name"/>
+                                    </f:facet>
+                                    <h:outputText value="#{it.tenantName}"/>
+                                </h:column>  
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value=""/>
+                                    </f:facet>
+                                    <h:commandButton action="#{property.detailsPageLink(it)}" value="View Details">
+                                        </h:commandButton>
+                                </h:column>
+                            </h:dataTable>
+                        </div>
+                        <div class="linkrow">
+                            <h:commandLink action="#{propertyInRent.pageLink}">Create In Rent Property</h:commandLink> | 
+                            <h:link outcome="index.xhtml" value="Main page"/>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>List Property Managers</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./pageTemplate.xhtml">
+            <ui:define name="top"></ui:define>
+            <ui:define name="content">
+                <h:form>
+                    <div class="section">
+                        <h2>List Property Managers</h2>
+                        <div class="listTable">
+                            <h:dataTable value="#{propertyManager.propertyManagerList()}" var="it">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="ID"/>
+                                    </f:facet>
+                                    <h:outputText value="#{it.propertyManagerID}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="First Name"/>
+                                    </f:facet>
+                                    <h:outputText value="#{it.firstName}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Last Name"/>
+                                    </f:facet>
+                                    <h:outputText value="#{it.lastName}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Property Manager Email"/>
+                                    </f:facet>
+                                    <h:outputText value="#{it.email}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Phone Number"/>
+                                    </f:facet>
+                                    <h:outputText value="#{it.phoneNumber}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value=""/>
+                                    </f:facet>
+                                    <h:commandButton action="#{propertyManager.detailsPageLink(it)}" value="View Details"/>
+                                </h:column>
+                            </h:dataTable>
+                            <div class ="totalrow">
+                                <h:outputText value="Total Property Managers: #{propertyManager.propertyManagerList.size()}"/>
+                            </div>
+                        </div>
+                        <div class="linkrow">
+                            <h:commandLink action="#{propertyManager.pageLink}">Create Property Manager</h:commandLink> | 
+                            <h:link outcome="index.xhtml" value="Main page"/>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
