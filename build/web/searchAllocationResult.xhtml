@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Allocation Search Result</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./pageTemplate.xhtml">
+            <ui:define name="top"></ui:define>
+            <ui:define name="content">
+                <h:form>
+                    <div class="section">
+                        <h2>The Allocation with ID: #{allocation.alloID}</h2>
+                        <table class="displayTable">
+                            <tr>
+                                <th>
+                                    <b><h:outputLabel value="ID:"/></b>
+                                </th>
+                                <td>
+                                    <h:outputLabel value="#{allocation.alloID}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b><h:outputLabel value="Property Manager:"/></b>
+                                </th>
+                                <td>
+                                    <h:outputLabel value="#{propertyManager.getName(allocation.allocation.manager)}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b><h:outputLabel value="Property:"/></b>
+                                </th>
+                                <td>
+                                    <h:outputLabel value="#{property.getAddress(allocation.allocation.property)}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b><h:outputLabel value="Creation Date:"/></b>
+                                </th>
+                                <td>
+                                    <h:outputLabel value="#{allocation.allocation.creationDate}"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="totalrow">
+                            <h:commandButton action="#{allocation.deleteAllocation(allocation.allocation)}" value="Delete Allocation"/>
+                        </div>
+                        <div class="linkrow">
+                            <h:commandLink action="#{allocation.pageLink()}">Create a new Allocation</h:commandLink> | 
+                            <h:link outcome="index.xhtml" value="Main Page"/>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition> 
+    </h:body>
+</html>

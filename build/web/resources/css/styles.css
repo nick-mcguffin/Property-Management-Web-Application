@@ -1,0 +1,209 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/10/2021, 12:00:35 AM
+    Author     : allen
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    background-color: gray;
+    width: 100%;
+    height: 60px;
+}
+
+h1{
+    font-size: 2.4em;
+    color: #ffbe76;
+    text-align:center;
+    margin: 0.5em 0.1em;
+    padding: 0.5em;
+    border: 2px solid #95afc0;
+    background-color: #c7ecee;
+    text-shadow: 1px 1px 1px #30336b;
+}
+
+h2{
+    padding: 0.5em;
+    font-size: 1.8em;
+    color: #30336b;
+    text-align:center;
+}
+
+a {
+    text-shadow: 1px 1px 1px #30336b;
+    font-size: 1.2em;
+    color: #c7ecee;
+    position: relative;
+    text-decoration: none;
+    transition: color .4s ease-out;
+}
+
+a:hover {
+  color: #ffbe76;
+  right: 0;
+  text-decoration: none;
+}
+
+a:hover:after {
+  border-color: #ffbe76;
+  right: 0;
+}
+
+a:after {
+  border-radius: 1em;
+  border-top: .1em solid #c7ecee;
+  content: "";
+  position: absolute;
+    right: 100%;
+    bottom: 0em;
+    left: 0;
+  transition: right .4s ease-in-out,
+              border-color .4s ease-in-out;
+}
+
+.linkrow{
+    display: block;
+    text-align:center;
+    margin: 1em;
+}
+
+.totalrow {
+    display: block;
+    text-align: center;
+    margin: 1em;
+    font-weight: bold;
+    color: #30336b;
+}
+
+.section {
+    background-color: #95afc0;
+    padding: 0.5em;
+    margin: 0.2em;
+}
+
+table{
+    border: none; 
+    margin: 0.5em auto;
+    min-width: 600px;
+}
+
+.inputTable th{
+    width: 38%;
+    font-size: 1.1em;
+    padding: 0.5em;
+    text-align: center;
+    color: #ffbe76;
+    background-color: #30336b;
+}
+
+.inputTable td {
+    width: 62%;
+    text-align: left;
+    padding: 0.1em 0.5em;
+    color: #ffbe76;
+    background-color: #c7ecee;
+}
+
+.inputTable input[type=text] {
+    padding: 0.4em 0em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.inputTable input[type=text]:focus {
+    border: 1px solid #ffbe76;
+}
+
+.listTable th {
+    font-size: 1.1em;
+    padding: 0.5em;
+    text-align: center;
+    color: #ffbe76;
+    background-color: #30336b;
+}
+
+.listTable td {
+    text-align: left;
+    padding: 0.5em;
+    color: #30336b;
+    background-color: #c7ecee;
+}
+
+.displayTable th {
+    font-size: 1.1em;
+    padding: 0.5em;
+    text-align: left;
+    color: #ffbe76;
+    background-color: #30336b;
+}
+
+.displayTable td {
+    text-align: left;
+    padding: 0.5em;
+    color: #30336b;
+    background-color: #c7ecee;
+}
+
+input[type=submit]{
+  background-color: #30336b;
+  border: thin solid #ffbe76;
+  border-radius: 0.5em;
+  color: #c7ecee;
+  padding: 0.5em 1em;
+  font-size: 1.1em;
+  text-decoration: none;
+  margin: 1em auto;
+  cursor: pointer;
+  display:block;
+  transition-duration: 0.4s;
+}
+
+input[type=submit]:hover{
+  background-color: #c7ecee;
+  color: #30336b;
+}
+
+.listTable input[type=submit]{
+  margin: 0.2em 0.5em;
+}
+
+.listTable a {
+    text-shadow: 1px 1px 1px #30336b;
+    font-size: 1.2em;
+    color: #dddddd;
+    position: relative;
+    text-decoration: none;
+    transition: color .4s ease-out;
+}
+
+.listTable a:hover {
+  color: #ffbe76;
+  right: 0;
+  text-decoration: none;
+}
+
+.listTable a:hover:after {
+  border-color: #ffbe76;
+  right: 0;
+}
+
+.listTable a:after {
+  border-radius: 1em;
+  border-top: .1em solid #c7ecee;
+  content: "";
+  position: absolute;
+    right: 100%;
+    bottom: 0em;
+    left: 0;
+  transition: right .4s ease-in-out,
+              border-color .4s ease-in-out;
+}
+

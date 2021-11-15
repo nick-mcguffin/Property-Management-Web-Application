@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <h:head>
+        <title>Property Management Studio Main</title>
+    </h:head>
+    
+    <h:body>
+        <ui:composition template="./pageTemplate.xhtml">
+            <ui:define name="top"></ui:define>
+            <ui:define name="content">
+                <h:form>
+                    <div class="section">
+                        <h2>Property</h2>  
+                        <div class="linkrow">
+                            <h:commandLink action="#{propertyForSale.pageLink}">Create Sale Property</h:commandLink>   |  
+                            <h:commandLink action="#{propertyForSale.listSaleProperties}">List Sale Property</h:commandLink>   |  
+                            <h:commandLink action="#{propertyForSale.searchPageLink}">Search Sale Property</h:commandLink>
+                        </div>
+                        <div class="linkrow">
+                            <h:commandLink action="#{propertyInRent.pageLink}">Create In Rent Property</h:commandLink>   |  
+                            <h:commandLink action="#{propertyInRent.listInRentProperties}">List In Rent Property</h:commandLink>   |  
+                            <h:commandLink action="#{propertyInRent.searchInRentProperty}">Search In Rent Property</h:commandLink>
+                        </div>
+                        <div class="linkrow">
+                            <h:commandLink action="#{propertyForRent.pageLink}">Create For Rent Property</h:commandLink>   |  
+                            <h:commandLink action="#{propertyForRent.listForRentProperties}">List For Rent Property</h:commandLink>   |  
+                            <h:commandLink action="#{propertyForRent.searchForRentProperty}">Search For Rent Property</h:commandLink>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h2>Property Manager</h2>
+                        <div class="linkrow">
+                            <h:commandLink action="#{propertyManager.pageLink}">Create Property Manager</h:commandLink>   |  
+                            <h:commandLink action="#{propertyManager.listPropertyManagers}">List Property Managers</h:commandLink>   |  
+                            <h:commandLink action="#{propertyManager.searchPropertyManagerPageLink}">Search Property Manager</h:commandLink><br/>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h2>Allocation Management</h2>
+                        <div class="linkrow">
+                            <h:commandLink action="#{allocation.newAllocationForm}">Create Allocation</h:commandLink>   |  
+                            <h:commandLink action="#{allocation.listAllocations}">List Allocation</h:commandLink>   |  
+                            <h:commandLink action="#{allocation.searchAllocations}">Search Allocation</h:commandLink><br/>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>     
+    </h:body>
+</html>
+

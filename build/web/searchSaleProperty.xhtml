@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Search a Sale Property</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./pageTemplate.xhtml">
+            <ui:define name="top"></ui:define>
+            <ui:define name="content">
+                <h:form>
+                    <div class="section">
+                        <h2>Search a Sale Property</h2>
+                        <table class="inputTable">
+                            <tr>
+                                <th>
+                                    <h:outputLabel value="Property ID"/>
+                                </th>
+                                <td>
+                                    <h:inputText id = "search" value="#{propertyForSale.searchParam}" required="true" required="true" id="Id" requiredMessage="Property Id is required">
+                                        <f:validateDoubleRange minimum="1.0" for="Id"/>
+                                    </h:inputText><h:message for="Id"/>
+                                </td>
+                            </tr>            
+                        </table>
+                        <h:commandButton value="SEARCH" action="#{propertyForSale.searchSalePropertyInfo()}"/>
+                        <div class="linkrow">
+                            <h:commandLink action="#{PropertyForSale.listSaleProperties}">List Sale Property</h:commandLink> | 
+                            <h:link outcome="index.xhtml" value="Main page"/>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
